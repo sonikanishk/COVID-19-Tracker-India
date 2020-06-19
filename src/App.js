@@ -8,12 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactCountryFlag from "react-country-flag"
 
 
-
 class App extends React.Component {
   state = {  
     status: {},
     states: [],
     withtime: [],
+    tests: []
   }
   
   componentDidMount() {
@@ -27,10 +27,11 @@ class App extends React.Component {
         
       };  
       this.setState({ status:curr_status });
-      let statess = res.data.statewise;
-      this.setState({states:statess});
-      let timecases = res.data.cases_time_series;
-      this.setState({withtime:timecases});
+
+      this.setState({states:res.data.statewise});
+      this.setState({tests:res.data.tested});
+      this.setState({withtime:res.data.cases_time_series});
+      
       
     }).catch(err => {
       console.log("error");
@@ -47,8 +48,8 @@ class App extends React.Component {
           </b>
             <ReactCountryFlag style={{ margin: "10px" }} countryCode="IN" svg />
         </h2>
-        <Overall status = {this.state.status} />   
-        <Charts data = {this.state.withtime}/>
+        <Overall status = {this.state.status} />  
+        <Charts data = {this.state.withtime} data1 = {this.state.tests} />
         <StateTable states={this.state.states}/>
       </div>
     );

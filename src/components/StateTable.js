@@ -1,14 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Table from 'react-bootstrap/Table'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Form from 'react-bootstrap/Form'
 
 export default function StateTable(props) {
     
     const  data  = props.states;
+    const [forminput,useforminp] = useState("");
+    
+    const filtereddata = data.filter(data=>{
+      return(
+        forminput !=="" ? data.state.includes(forminput) : data
+        
+      )
+    })
 
-    return(
-        <Table responsive bordered hover style={{ margin: "10px" }} height={320}>
+    const tabledata = filtereddata.map( (data,index) =>{
+      return(
+        <tbody>
+        <tr>  
+          <td>{index+1}</td>
+          <td>{data.state}</td>
+          <td>{data.confirmed}</td>
+          <td>{data.deaths}</td>
+          <td>{data.recovered}</td>
+          
+        </tr>
+      </tbody>
+      )
+  })
+    return(  
+      <div>    
+        <Form style={{ margin: "10px" }}>
+          <Form.Group controlId="SearchState">
+            <Form.Control type="text" placeholder="Search a State" onChange = {e=>useforminp(e.target.value) } />
+          </Form.Group>
+        </Form>
+        <h2 style={{ margin: "20px" }} >Statewise Distribution </h2>
+        <Table responsive bordered hover style={{ margin: "10px" }} >
           <thead>
             <tr>
               <th>#</th>
@@ -18,24 +47,9 @@ export default function StateTable(props) {
               <th>Total Recoveries</th>
             </tr>
           </thead>
-          
-          {
-          data.map( (data,index) =>{
-                  return(
-                    <tbody>
-                    <tr>  
-                      <td>{index+1}</td>
-                      <td>{data.state}</td>
-                      <td>{data.confirmed}</td>
-                      <td>{data.deaths}</td>
-                      <td>{data.recovered}</td>
-                      
-                    </tr>
-                  </tbody>
-                  )
-              })}
-
+          {tabledata}
         </Table>
+      </div>
     )
 }
 
