@@ -1,9 +1,9 @@
 import React from 'react';
-import Chart from 'react-apexcharts'
+import Chart from 'react-apexcharts';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import moment from 'moment';
 
 export default function Charts(props) {
     var cases = props.data;
@@ -29,8 +29,9 @@ export default function Charts(props) {
       })
       i=0;
       tests.map(val=>{
+        var date = moment(val.updatetimestamp,'DD/MM/YYYY HH:mm:ss').format('DD/MM');
         return(
-          days1[i]=val.updatetimestamp,
+          days1[i]=date,
           TotalSamples[i]=val.totalsamplestested,
           i++
         )
@@ -85,7 +86,7 @@ export default function Charts(props) {
           curve: 'smooth'
         },
         xaxis: {
-          type: 'time',
+          type: 'date',
           categories: days1
         },
         tooltip: {
@@ -99,11 +100,11 @@ export default function Charts(props) {
       return(
         <div>
             <Row>
-              <Col md='6'>
+              <Col lg='6'>
                 <h2 style={{ margin: "10px" }} > Graph of Tests Conducted </h2>
                 <Chart responsive options={options1} series={series1} type="area" height="480px" style={{ margin: "10px" }} />
               </Col>
-              <Col md='6'>
+              <Col lg='6'>
                 <h2 style={{ margin: "10px" }} > Graph of Growth of cases </h2>
                 <Chart responsive options={options} series={series} type="area" height="480px" style={{ margin: "10px" }} />
               </Col>

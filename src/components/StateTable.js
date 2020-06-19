@@ -10,7 +10,7 @@ export default function StateTable(props) {
     
     const filtereddata = data.filter(data=>{
       return(
-        forminput !=="" ? data.state.includes(forminput) : data
+        forminput !=="" ? data.state.toUpperCase().includes(forminput.toUpperCase()) : data
         
       )
     })
@@ -31,6 +31,7 @@ export default function StateTable(props) {
   })
     return(  
       <div>    
+        <h2 style={{ margin: "5px" }} >Do a Custom Search</h2>
         <Form style={{ margin: "10px" }}>
           <Form.Group controlId="SearchState">
             <Form.Control type="text" placeholder="Search a State" onChange = {e=>useforminp(e.target.value) } />
