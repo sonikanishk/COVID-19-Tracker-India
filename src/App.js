@@ -5,7 +5,6 @@ import StateTable from './components/StateTable'
 import Charts from './components/Charts'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactCountryFlag from "react-country-flag"
 
 
 class App extends React.Component {
@@ -42,12 +41,6 @@ class App extends React.Component {
     return (
       
       <div className="App">
-        <h2 className="text-center" style={{ margin: "10px" }} >
-          <b>
-            COVID-19 TRACKER INDIA 
-          </b>
-            <ReactCountryFlag style={{ margin: "10px" }} countryCode="IN" svg />
-        </h2>
         <Overall status = {this.state.status} />  
         <Charts data = {this.state.withtime} data1 = {this.state.tests} />
         <StateTable states={this.state.states}/>
