@@ -29,22 +29,22 @@ const dataSource = {
         },
         colorrange: {
             minvalue: "0",
-            code: "#FFE0B2",
+            code: "#7CFC00",
             gradient: "1",
             color: [
                 {
                     minvalue: "0.0",
-                    maxvalue: "5000.0",
+                    maxvalue: "500.0",
                     color: "#7CFC00"
                 },
                 {
-                    minvalue: "5000.0",
-                    maxvalue: "50000.0",
+                    minvalue: "500.0",
+                    maxvalue: "25000.0",
                     color: "#FF8C00"
                 },
                 {
-                    minvalue: "50000.0",
-                    maxvalue: "200000.0",
+                    minvalue: "25000.0",
+                    maxvalue: "400000.0",
                     color: "#FF0000	"
                 }
             ]
