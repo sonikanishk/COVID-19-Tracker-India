@@ -57,6 +57,11 @@ export default function Charts(props) {
         stroke: {
           curve: 'smooth'
         },
+        yaxis: {
+          title: {
+            text: 'Total Cases'
+          },
+        },
         xaxis: {
           type: 'datetime',
           categories: days
@@ -71,13 +76,14 @@ export default function Charts(props) {
       
       var series1= [{
         name: 'Total Samples',
+        type: 'bar',
         data: TotalSamples
       }];
       
       var options1= {
         chart: {
           height: 350,
-          type: 'area'
+          type: 'line'
         },
         dataLabels: {
           enabled: false
@@ -85,32 +91,39 @@ export default function Charts(props) {
         stroke: {
           curve: 'smooth'
         },
+        yaxis: {
+          title: {
+            text: 'Total Tests'
+          },
+        },
         xaxis: {
           type: 'date',
           categories: days1
         },
         tooltip: {
           x: {
-            format: 'dd/MM/yy'
+            format: 'dd/MM'
           },
         },
         
-      };  
+      }; 
+      
 
       return(
         <div>
             <Row>
               <Col lg='6'>
                 <h2 style={{ margin: "10px" }} > Graph of Tests Conducted </h2>
-                <Chart responsive options={options1} series={series1} type="area" height="480px" style={{ margin: "10px" }} />
+                <Chart  options={options1} series={series1} type="area" height="480px" style={{ margin: "10px" }} />
               </Col>
               <Col lg='6'>
                 <h2 style={{ margin: "10px" }} > Graph of Growth of cases </h2>
-                <Chart responsive options={options} series={series} type="area" height="480px" style={{ margin: "10px" }} />
+                <Chart  options={options} series={series} type="area" height="480px" style={{ margin: "10px" }} />
               </Col>
             </Row>
         </div>   
       )
 }
+
 
 

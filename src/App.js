@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Overall from './components/Overall'
 import StateTable from './components/StateTable'
 import Charts from './components/Charts'
+import Maps from './components/Maps'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       
       <div className="App">
-        <Overall status = {this.state.status} />  
+        <Maps states = {this.state.states}/>
         <Charts data = {this.state.withtime} data1 = {this.state.tests} />
         <StateTable states={this.state.states}/>
       </div>
