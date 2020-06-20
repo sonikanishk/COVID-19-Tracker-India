@@ -21,7 +21,7 @@ export default function StateTable(props) {
 const dataSource = {
         chart: {
             caption: "Total Corona Cases",
-            subcaption: "Last Updated ",
+            subcaption: "2020",
             includevalueinlabels: "1",
             labelsepchar: ": ",
             entityFillHoverColor: "#FFF9C4",
