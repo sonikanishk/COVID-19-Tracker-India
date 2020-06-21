@@ -16,10 +16,11 @@ export default function StateTable(props) {
     })
 
     const tabledata = filtereddata.map( (data,index) =>{
+      if(data.state !== "Total" && data.state !== "State Unassigned" ){
       return(
         <tbody>
         <tr>  
-          <td>{index+1}</td>
+          <td>{index}</td>
           <td>{data.state}</td>
           <td>{data.confirmed}</td>
           <td>{data.deaths}</td>
@@ -27,7 +28,13 @@ export default function StateTable(props) {
           
         </tr>
       </tbody>
-      )
+      )}
+      else{
+      return(
+        <tbody>
+          
+        </tbody>
+      )}
   })
     return(  
       <div>    
