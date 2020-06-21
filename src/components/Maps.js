@@ -207,8 +207,8 @@ const dataSource = {
 
 return (
     
-    <div>
-        <ReactFC {...chartConfigs} />;
+    <div style = {{marginRight: "50px", marginLeft: "50px"}}>
+        <ReactFC {...chartConfigs} />
     </div>
   );
 }
