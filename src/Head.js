@@ -12,6 +12,7 @@ class Head extends React.Component {
                     </b>
                     <ReactCountryFlag style={{ margin: "10px" }} countryCode="IN" svg />
                 </h2>
+                <hr></hr>
             </div>
         );
     };
