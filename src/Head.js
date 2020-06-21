@@ -6,7 +6,7 @@ class Head extends React.Component {
     render(){
         return(
             <div className="headd" >
-                <h2 className="text-center" style={{ margin: "10px" }} >
+                <h2 className="text-center" >
                     <b>
                         COVID-19 TRACKER INDIA 
                     </b>

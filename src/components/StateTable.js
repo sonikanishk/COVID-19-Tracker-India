@@ -14,10 +14,11 @@ export default function StateTable(props) {
         
       )
     })
-
-    const tabledata = filtereddata.map( (data,index) =>{
+    var index = 0;
+    const tabledata = filtereddata.map( (data) =>{
       if(data.state !== "Total" && data.state !== "State Unassigned" ){
       return(
+        index++,
         <tbody>
         <tr>  
           <td>{index}</td>
@@ -25,7 +26,6 @@ export default function StateTable(props) {
           <td>{data.confirmed}</td>
           <td>{data.deaths}</td>
           <td>{data.recovered}</td>
-          
         </tr>
       </tbody>
       )}
@@ -45,18 +45,22 @@ export default function StateTable(props) {
           </Form.Group>
         </Form>
         <h2 style={{ margin: "20px" }} >Statewise Distribution </h2>
-        <Table responsive bordered hover style={{ margin: "10px" }} >
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>State</th>
-              <th>Total Cases</th>
-              <th>Total Deaths</th>
-              <th>Total Recoveries</th>
-            </tr>
-          </thead>
-          {tabledata}
-        </Table>
+        <div style={{overflow:"auto",maxHeight:"500px",width: "100%"}}>
+          <Table responsive bordered hover style={{ margin: "10px",width:"100%"}} class="table table-bordered table-striped mb-0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>State</th>
+                <th>Total Cases</th>
+                <th>Total Deaths</th>
+                <th>Total Recoveries</th>
+              </tr>
+            </thead>
+            
+            {tabledata}
+            
+          </Table>
+        </div>
       </div>
       
     )

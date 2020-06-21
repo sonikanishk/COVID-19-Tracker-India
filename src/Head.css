@@ -1,7 +1,14 @@
 .headd{
-    background-color: rgb(226, 231, 236);
-    margin: 5px;
+    margin-top: 0;  
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
+    /* position: fixed;
+    transition: left 450ms ease;
+    border-bottom: 1px solid #e5e9f2;
+    display: block;
+    box-sizing: border-box; */
   }
