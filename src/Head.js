@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactCountryFlag from "react-country-flag";
-
+import './Head.css';
 class Head extends React.Component {
     render(){
         return(

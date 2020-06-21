@@ -13,18 +13,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     cursive;
 }
-.copyright{
-  
-  margin: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  background-color: rgb(226, 231, 236);
-}
-.headd{
-  background-color: rgb(226, 231, 236);
-  margin: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-}
+
