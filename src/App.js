@@ -5,7 +5,8 @@ import Charts from './components/Charts'
 import Maps from './components/Maps'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Head from './Head';
+import Footer from './Footer'
 
 class App extends React.Component {
   state = {  
@@ -39,12 +40,16 @@ class App extends React.Component {
   
   render() {
     return (
-      
-      <div className="App">
-        <Maps states = {this.state.states}/>
-        <Charts data = {this.state.withtime} data1 = {this.state.tests} />
-        <StateTable states={this.state.states}/>
+      <div>
+        <Head/>
+        <div className="App">
+        < Maps states = {this.state.states}/>
+          <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+          <StateTable states={this.state.states}/>
+        </div>
+        <Footer/>
       </div>
+      
     );
   }
 }
