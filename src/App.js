@@ -43,6 +43,7 @@ class App extends React.Component {
         <div class = "row">
           <div class = "col">
             <Head/>
+            <hr></hr>
           </div>
         </div>
         <div className="App ">

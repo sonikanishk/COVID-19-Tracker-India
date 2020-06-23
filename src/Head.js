@@ -50,7 +50,6 @@ class Head extends React.Component {
                         </ul>
                     </nav>
                 </div>
-                
             </div>
         );
     };
