@@ -1,14 +1,27 @@
 .headd{
-    margin-top: 0;  
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
     text-align: center;
-    /* position: fixed;
-    transition: left 450ms ease;
-    border-bottom: 1px solid #e5e9f2;
-    display: block;
-    box-sizing: border-box; */
+    font-family: 'Cinzel', serif;
+    align-content: center;
+    justify-content: center;
   }
+
+ .navbar{
+  font-family: 'Cinzel', serif;
+  justify-content: center;
+  text-align: right;
+  align-content: center;
+  
+ } 
+.nav-element{
+  padding: 0.5rem;
+  
+
+}
+.help-line{
+  font-family: 'Rubik', sans-serif;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+}
+@media only screen and (max-width: 600px) {} 
+@media only screen and (min-width: 600px) {}

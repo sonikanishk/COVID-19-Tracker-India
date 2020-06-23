@@ -37,7 +37,7 @@ export default function StateTable(props) {
       )}
   })
     return(  
-      <div>    
+      <div style={{fontFamily:'Nunito'}}>    
         <h2 style={{ margin: "5px" }} >Do a Custom Search</h2>
         <Form style={{ margin: "10px" }}>
           <Form.Group controlId="SearchState">

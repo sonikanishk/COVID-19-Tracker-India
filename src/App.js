@@ -27,7 +27,6 @@ class App extends React.Component {
         
       };  
       this.setState({ status:curr_status });
-
       this.setState({states:res.data.statewise});
       this.setState({tests:res.data.tested});
       this.setState({withtime:res.data.cases_time_series});
@@ -40,14 +39,26 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
-        <Head/>
-        <div className="App">
-        < Maps states = {this.state.states}/>
-          <Charts data = {this.state.withtime} data1 = {this.state.tests} />
-          <StateTable states={this.state.states}/>
+      <div id="home">
+        <div class = "row">
+          <div class = "col">
+            <Head/>
+          </div>
         </div>
-        <Footer/>
+        <div className="App ">
+          <div id="maps">
+            <Maps states = {this.state.states}/>
+          </div>
+          <div class="row" id="charts">
+            <div class="col">
+              <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+            </div>
+          </div> 
+          <div id="table">
+             <StateTable states={this.state.states}/>           
+          </div>                 
+        </div>
+         <Footer/> 
       </div>
       
     );
@@ -57,7 +68,11 @@ export default App;
 
 
 
+          // <div class="row">
+          //   <div class="col">
 
+          //   </div>
+          // </div>
 
 
         

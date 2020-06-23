@@ -76,14 +76,14 @@ export default function Charts(props) {
       
       var series1= [{
         name: 'Total Samples',
-        type: 'bar',
+        type: 'area',
         data: TotalSamples
       }];
       
       var options1= {
         chart: {
           height: 350,
-          type: 'line'
+          type: 'area'
         },
         dataLabels: {
           enabled: false
@@ -110,15 +110,15 @@ export default function Charts(props) {
       
 
       return(
-        <div>
+        <div style={{fontFamily:"Nutino"}}>
             <Row>
-              <Col lg='6'>
-                <h2 style={{ margin: "10px" }} > Graph of Tests Conducted </h2>
-                <Chart  options={options1} series={series1} type="area" height="480px" style={{ margin: "10px" }} />
-              </Col>
               <Col lg='6'>
                 <h2 style={{ margin: "10px" }} > Graph of Growth of cases </h2>
                 <Chart  options={options} series={series} type="area" height="480px" style={{ margin: "10px" }} />
+              </Col>
+              <Col lg='6'>
+                <h2 style={{ margin: "10px" }} > Graph of Tests Conducted </h2>
+                <Chart  options={options1} series={series1} type="area" height="480px" style={{ margin: "10px" }} />
               </Col>
             </Row>
         </div>   

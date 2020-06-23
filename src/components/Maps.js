@@ -4,6 +4,7 @@ import Maps from 'fusionmaps/fusioncharts.maps';
 import India from 'fusionmaps/maps/fusioncharts.india';
 import ReactFC from 'react-fusioncharts';
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function StateTable(props) {
     const  data  = props.states;
@@ -96,7 +97,7 @@ const dataSource = {
             },
             {
                 id: "011",
-                value: 1231
+                value: refineddata[25]
             },
             {
                 id: "012",
@@ -206,8 +207,7 @@ const dataSource = {
       };
 
 return (
-    
-    <div style = {{marginRight: "50px", marginLeft: "50px"}}>
+    <div style={{marginLeft: "5rem",marginRight:"5rem"}}>
         <ReactFC {...chartConfigs} />
     </div>
   );
