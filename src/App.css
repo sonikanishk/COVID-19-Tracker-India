@@ -20,7 +20,14 @@
   body div::-webkit-scrollbar-track{
     background: #1e1e24;
   }
-
+.page-element{
+  display: flex;
+  Flex-direction: column;
+  Min-height: 100vh;
+}
+.wrap{
+  Flex:1 ;
+}
 
 
 

@@ -39,26 +39,29 @@ class App extends React.Component {
   
   render() {
     return (
-      <div id="home">
-        <div class = "row">
-          <div class = "col">
-            <Head/>
-            <hr></hr>
-          </div>
-        </div>
-        <div className="App ">
-          <div id="maps">
-            <Maps states = {this.state.states}/>
-          </div>
-          <div class="row" id="charts">
-            <div class="col">
-              <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+      <div id="home" className = "page-element" >
+        <div class="wrap">
+          <div class = "row">
+            <div class = "col">
+              <Head/>
+              <hr></hr>
             </div>
-          </div> 
-          <div id="table">
-             <StateTable states={this.state.states}/>           
-          </div>                 
+          </div>
+          <div className="App ">
+            <div id="maps">
+              <Maps states = {this.state.states}/>
+            </div>
+            <div class="row" id="charts">
+              <div class="col">
+                <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+              </div>
+            </div> 
+            <div id="table">
+              <StateTable states={this.state.states}/>           
+            </div>                 
+          </div>
         </div>
+
          <Footer/> 
       </div>
       
@@ -67,13 +70,6 @@ class App extends React.Component {
 }
 export default App;
 
-
-
-          // <div class="row">
-          //   <div class="col">
-
-          //   </div>
-          // </div>
 
 
         

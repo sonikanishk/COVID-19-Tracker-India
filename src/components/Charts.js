@@ -110,7 +110,7 @@ export default function Charts(props) {
       
 
       return(
-        <div style={{fontFamily:"Nutino"}}>
+        <div style={{fontFamily:"Nunito"}}>
             <Row>
               <Col lg='6'>
                 <h2 style={{ margin: "10px" }} > Graph of Growth of cases </h2>

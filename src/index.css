@@ -21,3 +21,6 @@ code {
     cursive;
 }
 
+html{
+  scroll-behavior: smooth;
+}
