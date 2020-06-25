@@ -205,7 +205,7 @@ const dataSource = {
         dataFormat: 'json',
         dataSource: dataSource ,
       };
-
+    
 return (
     <div style={{marginLeft: "5rem",marginRight:"5rem"}}>
         <ReactFC {...chartConfigs} />

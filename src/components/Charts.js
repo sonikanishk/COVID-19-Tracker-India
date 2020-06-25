@@ -29,7 +29,7 @@ export default function Charts(props) {
       })
       i=0;
       tests.map(val=>{
-        var date = moment(val.updatetimestamp,'DD/MM/YYYY HH:mm:ss').format('DD/MM');
+        var date = moment(val.updatetimestamp,'DD/MM/YYYY HH:mm:ss').format('LL');
         return(
           days1[i]=date,
           TotalSamples[i]=val.totalsamplestested,
@@ -97,12 +97,12 @@ export default function Charts(props) {
           },
         },
         xaxis: {
-          type: 'date',
+          type: 'datetime',
           categories: days1
         },
         tooltip: {
           x: {
-            format: 'dd/MM'
+            format: 'dd/MM/yy'
           },
         },
         

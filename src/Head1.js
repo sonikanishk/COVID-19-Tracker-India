@@ -1,18 +1,17 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactCountryFlag from "react-country-flag";
 import './Head.css';
 import {Link} from 'react-router-dom'
 
-class Head extends React.Component {
+class Head1 extends React.Component {
     render(){
         return(
             <div class="row">
                 <div className="headd col-sm-6" >
                     <h2>
-                        <b> COVID-19 TRACKER INDIA </b>
+                        <b> WORLD COVID-19 TRACKER </b>
                         <span class="flag">
-                            <ReactCountryFlag countryCode="IN" svg />
+                            <i class="fas fa-globe-africa"></i>
                         </span>
                     </h2>
                 </div>
@@ -30,8 +29,8 @@ class Head extends React.Component {
                     <nav class="navbar">
                         <ul class = "nav">
                             <li class="nav-element">
-                                <Link to="World">
-                                    <p> World </p>
+                                <Link to="/">
+                                    <p> India </p>
                                 </Link>
                             </li>
                             <li class="nav-element">
@@ -39,7 +38,7 @@ class Head extends React.Component {
                                     <p> About </p>
                                 </a>
                             </li>
-                            <li class="nav-element">
+                            {/* <li class="nav-element">
                                 <a href="#maps">
                                     <p> Map </p>
                                 </a>
@@ -58,7 +57,7 @@ class Head extends React.Component {
                                 <a href="#cards">
                                     <p> Status </p>
                                 </a>
-                            </li>
+                            </li> */}
                             
                         </ul>
                         
@@ -68,5 +67,5 @@ class Head extends React.Component {
         );
     };
 };
-export default Head;
+export default Head1;
 

@@ -6,7 +6,11 @@ import Maps from './components/Maps'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from './Head';
-import Footer from './Footer'
+import Footer from './Footer';
+import Overall from './components/Overall'
+import About from './components/About'
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import World from './World'
 
 class App extends React.Component {
   state = {  
@@ -39,38 +43,56 @@ class App extends React.Component {
   
   render() {
     return (
+      <Router>
+      <Switch>
       <div id="home" className = "page-element" >
         <div class="wrap">
           <div class = "row">
             <div class = "col">
-              <Head/>
+              <Route path="/" exact component = {Head} />
+              <Route path="/World" exact component = {World} />
               <hr></hr>
             </div>
           </div>
-          <div className="App ">
-            <div id="maps">
-              <Maps states = {this.state.states}/>
+      
+          <div className="App">
+            <div id= "cards" class = "col-12">
+              <Route path="/" exact render={rp=><Overall status = {this.state.status}/>} />
             </div>
-            <div class="row" id="charts">
-              <div class="col">
-                <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+            <div id = "about" class = "col-12">
+              <Route path="/" exact component = {About} />
+            </div>
+            <div id="maps">
+              <Route path="/" exact render={rp=> <Maps states = {this.state.states} />} />
+            </div>
+            <div class="col-12" id="charts">
+              <div >
+                <Route path="/" exact render={rp=> <Charts data = {this.state.withtime} data1 = {this.state.tests} />} />
               </div>
             </div> 
-            <div id="table">
-              <StateTable states={this.state.states}/>           
+            <div class="col-12" id="table">
+              <Route path="/" exact render={rp=> <StateTable states={this.state.states}/>  } />
+   
             </div>                 
           </div>
         </div>
 
-         <Footer/> 
+        <Route path="/" exact component = {Footer} />
       </div>
-      
+      </Switch>
+      </Router>
     );
   }
 }
 export default App;
 
 
-
-        
+/* 
+  count up
+  dark mode
+  about
+  cards
+  
+              <Route path="/" exact render={rp=>} />
+ */       
          
