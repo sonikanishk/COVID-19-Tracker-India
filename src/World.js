@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import StateTable from './components/StateTable'
-import Charts from './components/Charts'
-import Maps from './components/Maps'
+// import StateTable from './components/StateTable'
+// import Charts from './components/Charts'
+// import Maps from './components/Maps'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Head1 from './Head1';
