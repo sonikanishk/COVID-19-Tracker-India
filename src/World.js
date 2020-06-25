@@ -60,10 +60,10 @@ class World extends React.Component {
               <Maps states = {this.state.states}/>
             </div> */}
             <div id= "cards" class = "col-12">
-              <Overall status = {this.state.status}/> 
+              <Route path="/World" exact render={rp=><Overall status = {this.state.status}/>} />
             </div>
             <div class = "col-12">
-              <About/>
+              <Route path="/world" exact component = {About} />
             </div>
             <div class="col-12" id="charts">
               <div >
