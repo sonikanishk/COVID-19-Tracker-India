@@ -5,12 +5,12 @@ import './App.css';
 // import Maps from './components/Maps'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Head1 from './Head1';
+// import Head from './Head';
 import Footer from './Footer';
 import Overall from './components/Overall'
 import About from './components/About'
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import App from './App'
+// import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+// import App from './App'
 
 class World extends React.Component {
   state = {  
@@ -43,27 +43,28 @@ class World extends React.Component {
   
   render() {
     return (
-      <Router>
-      <Switch>
+      
       <div id="home" className = "page-element" >
         <div class="wrap">
-          <div class = "row">
+          {/* <div class = "row">
             <div class = "col">
-              <Route path="/World" exact component = {Head1} />
               <Route path="/" exact component = {App} />
+              <Route path="/World" exact component = {Head} />
               <hr></hr>
             </div>
-          </div>
+          </div> */}
       
           <div className="App">
             {/* <div id="maps">
               <Maps states = {this.state.states}/>
             </div> */}
             <div id= "cards" class = "col-12">
-              <Route path="/World" exact render={rp=><Overall status = {this.state.status}/>} />
+              <Overall status = {this.state.status}/>
+              {/* <Route path="/World" exact render={rp=><Overall status = {this.state.status}/>} /> */}
             </div>
-            <div class = "col-12">
-              <Route path="/world" exact component = {About} />
+            <div id="about" class = "col-12">
+              <About/>
+              {/* <Route path="/world" exact component = {About} /> */}
             </div>
             <div class="col-12" id="charts">
               <div >
@@ -75,11 +76,9 @@ class World extends React.Component {
             </div>                 
           </div>
         </div>
-
-        <Route path="/World" exact component = {Footer} />
+        <Footer/>
       </div>
-      </Switch>
-      </Router>
+     
     );
   }
 }

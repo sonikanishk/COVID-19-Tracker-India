@@ -18,11 +18,11 @@ export default function Charts(props){
                 <Card className={classes.root} variant="outlined" >   
                     <CardContent>
                         <Typography className={classes.title} color="textSecondary" gutterBottom>
-                            <h3> Coronavirus disease (COVID‑19) <i class="fas fa-virus 3x"> </i> </h3>
+                            <h3> Coronavirus disease (COVID‑19) <i className="fas fa-virus 3x"> </i> </h3>
                         </Typography>
                         <hr/>
-                        <div class="row">
-                        <div class="col-sm-6">
+                        <div className="row">
+                        <div className="col-sm-6">
                         <Typography className={classes.title} color="textSecondary" gutterBottom>
                             <h4> Overview </h4>
                         </Typography>

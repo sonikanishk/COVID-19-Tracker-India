@@ -1,22 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ReactCountryFlag from "react-country-flag";
 import './Head.css';
 import {Link} from 'react-router-dom'
 
-class Head extends React.Component {
-    render(){
+export default function Head(){
         return(
-            <div class="row">
+            <div className="row">
                 <div className="headd col-sm-6" >
                     <h2>
-                        <b> COVID-19 TRACKER INDIA </b>
-                        <span class="flag">
-                            <ReactCountryFlag countryCode="IN" svg />
-                        </span>
+                        <b> COVID-19 TRACKER </b> 
+                        <i className="fas fa-globe-americas"></i>
+                        
                     </h2>
                 </div>
-                <div class="help-line col-sm-6">
+                <div className="help-line col-sm-6">
                     <p>
                         <b>
                             COVID Helpline No: 
@@ -26,35 +23,40 @@ class Head extends React.Component {
                     </p>
                 </div>
 
-                <div class="col">
-                    <nav class="navbar">
-                        <ul class = "nav">
-                            <li class="nav-element">
-                                <Link to="World">
+                <div className="col">
+                    <nav className="navbar">
+                        <ul className = "nav">
+                            <li className="nav-element">
+                                <Link to="/World">
                                     <p> World </p>
                                 </Link>
                             </li>
-                            <li class="nav-element">
+                            <li className="nav-element">
+                                <Link to="/">
+                                    <p> India </p>
+                                </Link>
+                            </li>
+                            <li className="nav-element">
                                 <a href="#about">
                                     <p> About </p>
                                 </a>
                             </li>
-                            <li class="nav-element">
+                            <li className="nav-element">
                                 <a href="#maps">
                                     <p> Map </p>
                                 </a>
                             </li>
-                            <li class="nav-element">
+                            <li className="nav-element">
                                 <a href="#charts">
                                     <p> Charts </p>    
                                 </a>    
                             </li>
-                            <li class="nav-element">
+                            <li className="nav-element">
                                 <a href="#table">
                                     <p> Table </p>
                                 </a>
                             </li>
-                            <li class="nav-element">
+                            <li className="nav-element">
                                 <a href="#cards">
                                     <p> Status </p>
                                 </a>
@@ -66,7 +68,4 @@ class Head extends React.Component {
                 </div>
             </div>
         );
-    };
 };
-export default Head;
-

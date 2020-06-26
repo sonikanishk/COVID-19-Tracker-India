@@ -9,16 +9,16 @@
  .navbar{
   font-family: 'Cinzel', serif;
   justify-content: center;
-  text-align: left;
+  text-align: center;
   align-content: center;
   
  } 
  .nav{
    width: 100%;
-   text-align: left;
+   text-align: center;
  }
 .nav-element-right{
-  text-align: right;
+  text-align: center;
 }
 .nav-element{
   padding: 0.5rem;
