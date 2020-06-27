@@ -50,11 +50,11 @@ class Home extends React.Component {
             <div id= "cards" className = "col-12">
                 <Overall status = {this.state.status}/>  
             </div>
-            <div id = "about" className = "col-12">
-                <About/>
-            </div>
             <div id="maps">
                 <Maps states = {this.state.states} />
+            </div>
+            <div id = "about" className = "col-12">
+                <About/>
             </div>
             <div className="col-12" id="charts">
               <div >
