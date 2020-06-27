@@ -22,7 +22,7 @@ export default function Charts(props){
                         </Typography>
                         <hr/>
                         <div className="row">
-                        <div className="col-sm-6">
+                        <div className="col-6">
                         <Typography className={classes.title} color="textSecondary" gutterBottom>
                             <h4> Overview </h4>
                         </Typography>
@@ -47,7 +47,7 @@ export default function Charts(props){
                             Seek medical care if you have a fever, a cough, and difficulty breathing. Call in advance.<br/>
                         </Typography>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-6">
                         <Typography className={classes.title} color="textSecondary" gutterBottom>
                             <h4> Symptoms </h4>
                         </Typography>

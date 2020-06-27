@@ -10,7 +10,7 @@ import Footer from './Footer';
 import Overall from './components/Overall'
 import About from './components/About'
 // import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-// import App from './App'
+import Navbar from './components/Navbar'
 
 class World extends React.Component {
   state = {  
@@ -45,36 +45,27 @@ class World extends React.Component {
     return (
       
       <div id="home" className = "page-element" >
+        <Navbar/>
         <div class="wrap">
-          {/* <div class = "row">
-            <div class = "col">
-              <Route path="/" exact component = {App} />
-              <Route path="/World" exact component = {Head} />
-              <hr></hr>
-            </div>
-          </div> */}
-      
           <div className="App">
             {/* <div id="maps">
               <Maps states = {this.state.states}/>
             </div> */}
             <div id= "cards" class = "col-12">
               <Overall status = {this.state.status}/>
-              {/* <Route path="/World" exact render={rp=><Overall status = {this.state.status}/>} /> */}
             </div>
             <div id="about" class = "col-12">
               <About/>
-              {/* <Route path="/world" exact component = {About} /> */}
             </div>
-            <div class="col-12" id="charts">
+            {/* <div class="col-12" id="charts">
               <div >
-                {/* <Charts data = {this.state.withtime} data1 = {this.state.tests} /> */}
+                <Charts data = {this.state.withtime} data1 = {this.state.tests} />
               </div>
-            </div> 
-            <div class="col-12" id="table">
-              {/* <StateTable states={this.state.states}/>            */}
-            </div>                 
-          </div>
+            </div>  */}
+            {/* <div class="col-12" id="table">
+              <StateTable states={this.state.states}/>           
+            </div> */}                 
+          </div> 
         </div>
         <Footer/>
       </div>

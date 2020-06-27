@@ -35,7 +35,7 @@ export default function Overall(props) {
   return (
     <div className="row" style={{marginBottom: "20px"}}>
       <div className="col-md-4">
-        <Card className={classes.root} variant="outlined" style={{borderBottom: "10px solid rgba(0,0,255,0.5)" }}>
+        <Card className={classes.root} variant="outlined" style={{borderBottom: "10px solid rgba(0,0,255,0.5)",position:"unset" }}>
           <CardContent>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
               Cases 
@@ -61,7 +61,7 @@ export default function Overall(props) {
         </Card >
       </div>
       <div className="col-md-4">
-        <Card className={classes.root} variant="outlined" style={{borderBottom: "10px solid rgba(255,0,0,0.5)" }}>
+        <Card className={classes.root} variant="outlined" style={{borderBottom: "10px solid rgba(255,0,0,0.5)" ,position:"unset"}}>
           <CardContent>
             <Typography className={classes.title} color="textSecondary" gutterBottom>
               Deceased
@@ -88,7 +88,7 @@ export default function Overall(props) {
         </Card>
       </div>
       <div className="col-md-4">
-      <Card className={classes.root} variant="outlined" style={{borderBottom: "10px solid rgba(0,255,0,0.5)" }}>
+      <Card className={classes.root} variant="outlined" style={{borderBottom: "10px solid rgba(0,255,0,0.5)",position:"unset" }}>
         <CardContent>
               <Typography className={classes.title} color="textSecondary" gutterBottom>
                 Recoveries

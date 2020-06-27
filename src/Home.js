@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Overall from './components/Overall'
 import About from './components/About'
 import Footer from './Footer';
-
+import Navbar from './components/Navbar'
 
 class Home extends React.Component {
   state = {  
@@ -43,9 +43,9 @@ class Home extends React.Component {
     return (
       
       <div id="home" className = "page-element" >
+        <Navbar/>
         <div className="wrap">
-          
-      
+
           <div className="App">
             <div id= "cards" className = "col-12">
                 <Overall status = {this.state.status}/>  
