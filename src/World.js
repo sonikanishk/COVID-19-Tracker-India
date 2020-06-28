@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 // import StateTable from './components/StateTable'
 // import Charts from './components/Charts'
-// import Maps from './components/Maps'
+import WorldMap from './components/WorldMap'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Head from './Head';
@@ -20,25 +20,20 @@ class World extends React.Component {
   
   componentDidMount() {
 
-    Axios.get(`https://covid19.mathdro.id/api`).then(res => { 
+    Axios.get(`https://api.covid19api.com/summary`).then(res => { 
       let curr_status = {
-        deaths: res.data.deaths.value,
-        confirmed: res.data.confirmed.value,
-        recovered: res.data.recovered.value,
-        time: res.data.lastupdate,
+        deaths: res.data.Global.TotalDeaths,
+        confirmed: res.data.Global.TotalConfirmed,
+        recovered: res.data.Global.TotalRecovered,
+        time: res.data.Date,
         
       };  
+      this.setState({countries:res.data.Countries});
       this.setState({ status:curr_status });  
     }).catch(err => {
       console.log("error");
     });
 
-    // Axios.get(`https://covid19.mathdro.id/api`).then(res => { 
-       
-    //   this.setState({ countries:curr_status });  
-    // }).catch(err => {
-    //   console.log("error");
-    // });
   };
   
   render() {
@@ -48,11 +43,11 @@ class World extends React.Component {
         <Navbar/>
         <div class="wrap">
           <div className="App">
-            {/* <div id="maps">
-              <Maps states = {this.state.states}/>
-            </div> */}
             <div id= "cards" class = "col-12">
               <Overall status = {this.state.status}/>
+            </div>
+            <div id="maps">
+              <WorldMap Countries={this.state.countries}/>
             </div>
             <div id="about" class = "col-12">
               <About/>
@@ -77,10 +72,6 @@ export default World;
 
 
 /* 
-  count up
   dark mode
-  about
-  cards
-  
  */       
          

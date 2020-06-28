@@ -108,21 +108,14 @@
       bottom: 0;
       width: 100vw;
       height: 5rem;
+      display: block;
     }
-
-    /* .nav-link{
-      width: 100%;
-    } */
     .logo {
       display: none;
     }
     .navbar-nav {
       flex-direction: row;
-
     }
-    /* .nav-link {
-      justify-content: space-evenly;
-    } */
     main {
       margin: 0;
     }
