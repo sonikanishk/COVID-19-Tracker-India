@@ -41,7 +41,7 @@ export default function CountryTable(props) {
         <h2 style={{ margin: "5px" }} >Do a Custom Search</h2>
         <Form style={{ margin: "10px" }}>
           <Form.Group controlId="SearchState">
-            <Form.Control type="text" placeholder="Search a State" onChange = {e=>useforminp(e.target.value) } />
+            <Form.Control type="text" placeholder="Search a Country" onChange = {e=>useforminp(e.target.value) } />
           </Form.Group>
         </Form>
         <h2 style={{ margin: "20px" }} >Country wise Distribution </h2>

@@ -7,16 +7,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Footer';
 import CountryCards from './components/CountryCards'
 import About from './components/About';
-// import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CountryTable from './components/CountryTable';
-//import WorldChart from './components/WorldChart'
-
+import HashLoader from "react-spinners/HashLoader";
 class World extends React.Component {
   state = {  
     status: [],
     countries: [],
     pickedCountry: '',
+    loading: true,
   }
   
   componentDidMount() {
@@ -31,7 +30,8 @@ class World extends React.Component {
       };  
       this.setState({ status:curr_status}); 
       let setcountries = res.data.Countries;
-      this.setState({countries:setcountries}); 
+      this.setState({countries:setcountries});
+      this.setState({loading:false}); 
     }).catch(err => {
       console.log("error");
     });  
@@ -53,10 +53,12 @@ handleCountryChange = async (pickedCountry) =>{
 }
   render() {
     return (
-      
       <div id="home" className = "page-element" >
         <Navbar/>
         <div class="wrap">
+          <div style={{display : "flex",justifyContent: "center",margin: "20px"}}>
+          <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
+        </div>
           <div className="App">
             <div id= "cards" class = "col-12">
               <CountryCards status = {this.state.status}/>
@@ -70,11 +72,11 @@ handleCountryChange = async (pickedCountry) =>{
             <div id="about" class = "col-12">
               <About/>
             </div>
-            <div class="col-12" id="charts" className="choose-form">
+            {/* <div class="col-12" id="charts" className="choose-form">
               <div>
-                {/* <WorldChart status={this.state.status} country={this.state.pickedCountry} /> */}
+                <WorldChart status={this.state.status} country={this.state.pickedCountry} />
               </div>
-            </div> 
+            </div>  */}
             <div class="col-12" id="table">
               <CountryTable countries={this.state.countries}/>           
             </div>                 

@@ -8,7 +8,8 @@ export default function ChooseCountry(props){
     return(
         <div className="choose-form">
             <FormControl>
-                <NativeSelect defaultValue="" onChange = {(e)=>pickCountry(e.target.value) }>
+                Pick a Country
+                <NativeSelect  defaultValue="" onChange = {(e)=>pickCountry(e.target.value) }>
                     <option value="global">Global</option>
                     {countries.map((country,i)=>{
                         var cont = country.Country;

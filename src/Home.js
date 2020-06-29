@@ -9,13 +9,15 @@ import Overall from './components/Overall'
 import About from './components/About'
 import Footer from './Footer';
 import Navbar from './components/Navbar'
+import HashLoader from "react-spinners/HashLoader";
 
 class Home extends React.Component {
   state = {  
     status: {},
     states: [],
     withtime: [],
-    tests: []
+    tests: [],
+    loading: true,
   }
   
   componentDidMount() {
@@ -32,7 +34,7 @@ class Home extends React.Component {
       this.setState({states:res.data.statewise});
       this.setState({tests:res.data.tested});
       this.setState({withtime:res.data.cases_time_series});
-      
+      this.setState({loading:false});
       
     }).catch(err => {
       console.log("error");
@@ -42,10 +44,13 @@ class Home extends React.Component {
   render() {
     return (
       
-      <div id="home" className = "page-element" >
+      <div className = "page-element" >
+
         <Navbar/>
         <div className="wrap">
-
+          <div style={{display : "flex",justifyContent: "center",margin: "20px"}}>
+          <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
+        </div>
           <div className="App">
             <div id= "cards" className = "col-12">
                 <Overall status = {this.state.status}/>  

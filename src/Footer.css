@@ -1,8 +1,16 @@
 .copyright{
-    margin-top: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    margin: 3px;
+    padding: 2px;
     text-align: center;
     background-color: rgb(251, 253, 255);
     min-height: "100%";
+    justify-content: space-evenly;
+    font-size: 18px;
+    font-weight: 500;
+  } 
+  .copyright a{
+    padding: 6px;
   }
+.footer-wrap{
+  font-family: "Montserrat", sans-serif
+}

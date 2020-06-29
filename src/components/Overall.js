@@ -30,7 +30,11 @@ export default function Overall(props) {
   const{deaths,confirmed,recovered,time} = props.status;
   var date = moment(time,'DD/MM/YYYY HH:mm:ss').format('LL');
   if(!confirmed){
-    return('Loading...')
+    return(
+      <div style={{display : "flex",justifyContent: "center"}}>
+        <p> Loading... </p>
+      </div>
+    )
   };
   return (
     <div className="row" style={{marginBottom: "20px"}}>

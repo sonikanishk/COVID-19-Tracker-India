@@ -31,7 +31,11 @@ export default function Overall(props) {
   var time1 = moment(time, "YYYY-MM-DDTHH:mm:ss.SSS");
   var date = moment(time1,'DD/MM/YYYY HH:mm:ss.SSS').format('LL');
   if(!confirmed){
-    return('Loading...')
+    return(
+      <div style={{display : "flex",justifyContent: "center"}}>
+        <p> Loading... </p>
+      </div>
+    )
   };
   return (
     <div className="row" style={{marginBottom: "20px"}}>

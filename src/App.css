@@ -27,46 +27,10 @@
   Min-height: 100vh;
 }
 .wrap{
-  margin-top: 20vh;
+  margin-top: 8vh;
   Flex:1 ;
   margin-left: 14vh;
 }
-/* foot{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  font: small-caps bold 24px/1 sans-serif;
-  min-height: "30vh";
-  padding-top:5px ;
-  padding-bottom: 10px ;
-  background: gray;
-  color: black;
-  margin-top: auto;
-}
-footerL{
-  display: list-item;
-  justify-content: start;
-  min-height: "10vh";
-  padding-bottom: 10px;
-  padding-top: 5px;
-  margin-top: auto;
-  padding-left: 20px;
-  background: dimgrey;
-  color: black;
-  font: caption;
-  border: blueviolet;
-}
-footerR{
-  display: flex;
-  justify-content: center;
-  min-height: "10vh";
-  background: dimgrey;
-  margin-top: auto;
-  color: black;
-  font: caption;
-  border: blueviolet;
-} */
 .copyright{
   margin-top: 1rem;
   padding-top: 1rem;
