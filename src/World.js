@@ -1,21 +1,22 @@
 import React from 'react';
 import './App.css';
-// import StateTable from './components/StateTable'
-// import Charts from './components/Charts'
+import ChooseCountry from './components/ChooseCountry'
 import WorldMap from './components/WorldMap'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Head from './Head';
 import Footer from './Footer';
-import Overall from './components/Overall'
-import About from './components/About'
+import CountryCards from './components/CountryCards'
+import About from './components/About';
 // import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import CountryTable from './components/CountryTable';
+//import WorldChart from './components/WorldChart'
 
 class World extends React.Component {
   state = {  
-    status: {},
+    status: [],
     countries: [],
+    pickedCountry: '',
   }
   
   componentDidMount() {
@@ -28,14 +29,28 @@ class World extends React.Component {
         time: res.data.Date,
         
       };  
-      this.setState({countries:res.data.Countries});
-      this.setState({ status:curr_status });  
+      this.setState({ status:curr_status}); 
+      let setcountries = res.data.Countries;
+      this.setState({countries:setcountries}); 
     }).catch(err => {
       console.log("error");
-    });
-
-  };
-  
+    });  
+};
+handleCountryChange = async (pickedCountry) =>{
+  const FilterData = this.state.countries.filter((data,i)=>{
+    return(
+      pickedCountry !==""?data.Country===pickedCountry:console.log(data)
+    )
+  })
+  let curr_status = {
+    deaths: FilterData[0].TotalDeaths,
+    confirmed: FilterData[0].TotalConfirmed,
+    recovered: FilterData[0].TotalRecovered,
+    time: FilterData[0].Date,
+    
+  };  
+  this.setState({ status:curr_status });  
+}
   render() {
     return (
       
@@ -44,7 +59,10 @@ class World extends React.Component {
         <div class="wrap">
           <div className="App">
             <div id= "cards" class = "col-12">
-              <Overall status = {this.state.status}/>
+              <CountryCards status = {this.state.status}/>
+            </div>
+            <div >
+                <ChooseCountry data={this.state.countries}  handleCountryChange={this.handleCountryChange}/>
             </div>
             <div id="maps">
               <WorldMap Countries={this.state.countries}/>
@@ -52,14 +70,14 @@ class World extends React.Component {
             <div id="about" class = "col-12">
               <About/>
             </div>
-            {/* <div class="col-12" id="charts">
-              <div >
-                <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+            <div class="col-12" id="charts" className="choose-form">
+              <div>
+                {/* <WorldChart status={this.state.status} country={this.state.pickedCountry} /> */}
               </div>
-            </div>  */}
-            {/* <div class="col-12" id="table">
-              <StateTable states={this.state.states}/>           
-            </div> */}                 
+            </div> 
+            <div class="col-12" id="table">
+              <CountryTable countries={this.state.countries}/>           
+            </div>                 
           </div> 
         </div>
         <Footer/>

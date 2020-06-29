@@ -75,7 +75,12 @@ footerR{
   background-color: rgb(251, 253, 255);
   min-height: "100%";
 }
-
+.choose-form{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 
 
