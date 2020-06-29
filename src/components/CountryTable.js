@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Table from 'react-bootstrap/Table'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form'
-
+import ReactCountryFlag from "react-country-flag"
 export default function CountryTable(props) {
     
     const  data  = props.countries;
@@ -17,11 +17,17 @@ export default function CountryTable(props) {
     var index = 0;
     const tabledata = filtereddata.map( (data) =>{
       if(data.state !== "Total" && data.state !== "State Unassigned" ){
+        
       return(
         index++,
         <tbody>
         <tr>  
           <td>{index}</td>
+          <td>
+            {
+              <ReactCountryFlag countryCode={data.CountryCode} svg />
+            }
+          </td>
           <td>{data.Country}</td>
           <td>{data.TotalConfirmed}</td>
           <td>{data.TotalDeaths}</td>
@@ -50,7 +56,8 @@ export default function CountryTable(props) {
             <thead>
               <tr>
                 <th>#</th>
-                <th>State</th>
+                <th>Flag</th>
+                <th>Country</th>
                 <th>Total Cases</th>
                 <th>Total Deaths</th>
                 <th>Total Recoveries</th>
