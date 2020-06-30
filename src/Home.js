@@ -49,7 +49,7 @@ class Home extends React.Component {
   render() {
     return (
       
-      <div className = "page-element" style={{backgroundColor: this.state.darkTheme ? "black" : "white",color: this.state.darkTheme ? "white" : "black" }} >
+      <div className = "page-element" >
 
         <Navbar/>
         <div className="wrap">
