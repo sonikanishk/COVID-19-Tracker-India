@@ -20,11 +20,13 @@
     "react-country-flag": "^2.2.0",
     "react-countup": "^4.3.3",
     "react-dom": "^16.13.1",
+    "react-floating-action-button": "^1.0.5",
     "react-fusioncharts": "^3.1.2",
     "react-google-charts": "^3.0.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "react-spinners": "^0.9.0"
+    "react-spinners": "^0.9.0",
+    "react-toggle": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -13,6 +13,7 @@ import HashLoader from "react-spinners/HashLoader";
 class World extends React.Component {
   state = {  
     status: [],
+    global: [],
     countries: [],
     pickedCountry: '',
     loading: true,
@@ -29,6 +30,7 @@ class World extends React.Component {
         
       };  
       this.setState({ status:curr_status}); 
+      this.setState({global:curr_status});
       let setcountries = res.data.Countries;
       this.setState({countries:setcountries});
       this.setState({loading:false}); 
@@ -37,6 +39,19 @@ class World extends React.Component {
     });  
 };
 handleCountryChange = async (pickedCountry) =>{
+
+  if(pickedCountry==="global"){
+    let curr_status = {
+      deaths: this.state.global.deaths,
+      confirmed: this.state.global.confirmed,
+      recovered: this.state.global.recovered,
+      time: this.state.global.date,
+      
+    };
+    this.setState({ status:curr_status });
+  }
+  else{
+
   const FilterData = this.state.countries.filter((data,i)=>{
     return(
       pickedCountry !==""?data.Country===pickedCountry:console.log(data)
@@ -50,7 +65,8 @@ handleCountryChange = async (pickedCountry) =>{
     
   };  
   this.setState({ status:curr_status });  
-}
+  console.log(this.state.status);
+}}
   render() {
     return (
       <div id="home" className = "page-element" >
