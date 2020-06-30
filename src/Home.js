@@ -10,7 +10,6 @@ import About from './components/About'
 import Footer from './Footer';
 import Navbar from './components/Navbar'
 import HashLoader from "react-spinners/HashLoader";
-import Toggle from 'react-toggle';
 import "react-toggle/style.css"
 
 class Home extends React.Component {
@@ -53,19 +52,6 @@ class Home extends React.Component {
       <div className = "page-element" style={{backgroundColor: this.state.darkTheme ? "black" : "white",color: this.state.darkTheme ? "white" : "black" }} >
 
         <Navbar/>
-        <div style={{zIndex:"11",position: "fixed",right:"40px",bottom:"40px"}}>
-      
-            <Toggle
-                defaultChecked={this.state.darkTheme}
-                icons={{
-                checked: "",
-                unchecked: null,
-                // bg: 'primary'
-                }}
-                onChange={this.handleDarkThemeChange} 
-                />
-
-        </div>
         <div className="wrap">
           <div style={{display : "flex",justifyContent: "center",margin: "20px"}}>
           <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
