@@ -45,6 +45,8 @@
   align-items: center;
   text-align: center;
 }
-
+.WorldChart{
+  text-align: -webkit-center;
+}
 
 

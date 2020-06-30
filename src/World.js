@@ -10,6 +10,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import CountryTable from './components/CountryTable';
 import HashLoader from "react-spinners/HashLoader";
+import WorldChart from './components/WorldChart'
 class World extends React.Component {
   state = {  
     status: [],
@@ -82,8 +83,11 @@ handleCountryChange = async (pickedCountry) =>{
             <div >
                 <ChooseCountry data={this.state.countries}  handleCountryChange={this.handleCountryChange}/>
             </div>
+            <div id= "charts" className = "col-12 WorldChart">
+              <WorldChart status = {this.state.status} />
+            </div>
             <div id="maps">
-              <WorldMap Countries={this.state.countries}/>
+              <WorldMap Countries={this.state.countries} />
             </div>
             <div id="about" class = "col-12">
               <About/>
@@ -107,7 +111,3 @@ handleCountryChange = async (pickedCountry) =>{
 export default World;
 
 
-/* 
-  dark mode
- */       
-         

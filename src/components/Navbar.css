@@ -59,7 +59,8 @@
     filter: grayscale(0%) opacity(1);
     background: var(--bg-secondary);
     color: var(--text-secondary);
-    color: #ff7eee;
+    /* color: #ff7eee; */
+    color: aliceblue; 
   }
   
   .link-text {

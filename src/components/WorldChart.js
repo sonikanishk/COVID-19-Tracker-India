@@ -1,57 +1,41 @@
 import React from 'react';
-import Chart from 'react-apexcharts';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import moment from 'moment';
+import { Bar } from 'react-chartjs-2';
 
 export default function WorldCharts(props) {
-    var status = props.status;
-    // var country = props.country; 
-      const time = status.time;
-      const Data = [status.confirmed,status.deaths,status.recovered];
-      var time1 = moment(time, "YYYY-MM-DDTHH:mm:ss.SSS");
-      var date = moment(time1,'DD/MM/YYYY HH:mm:ss.SSS').format('LL');
 
-      var series1= [{
-        name: 'Total Cases',
-        type: 'bar',
-        data: Data,
-      }];
-      
-      var options1= {
-        chart: {
-          height: 350,
-          type: 'bar'
-        },
-        dataLabels: {
-          enabled: false
-        },
-        stroke: {
-          curve: 'smooth'
-        },
-        yaxis: {
-          title: {
-            text: 'Total Tests'
-          },
-        },
-        xaxis: {
-          categories: ["Cases","Deaths","Recovered"]
-        },
-        
-      }; 
-        
-      
+    const status = props.status;
+    const confirmed = status.confirmed;
+    const deaths = status.deaths;
+    const recovered = status.recovered;
 
-      return(
-        <div style={{fontFamily:"Nunito"}}>
-            <Row>
-              <Col>
-                <h2 style={{ margin: "10px" }} > Status of Corona Virus</h2>
-                <Chart  options={options1} series={series1} type="bar" height="480px" style={{ margin: "10px" }} />
-              </Col>
-              
-            </Row>
-        </div>   
-      )
-      }
+    // var time1 = moment(Charts.date, "YYYY-MM-DDTHH:mm:ss.SSS");
+    // var date = moment(time1,'DD/MM/YYYY HH:mm:ss.SSS').format('LL');
+    const barChart = (
+        confirmed ? (
+            <Bar
+                data={{
+                    labels: ['Infected', 'Recovered', 'Deaths'],
+                    datasets: [
+                        {
+                            label: 'People',
+                            backgroundColor: ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)'],
+                            data: [confirmed, recovered, deaths],
+                            separator: ","
+                        },
+                    ],
+                }}
+                options={{
+                    legend: { display: false },
+                    title: { display: true, text: ` Current ` },
+                }}
+            />
+        ) : null
+    );
+
+
+    return (
+        <div style={{maxHeight:"600px",maxWidth: "800px" ,alignContent: "center"}}>
+            { barChart }
+        </div>
+    );
+};

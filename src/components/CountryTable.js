@@ -23,11 +23,6 @@ export default function CountryTable(props) {
         <tbody>
         <tr>  
           <td>{index}</td>
-          {/* <td>
-            {
-             
-            }
-          </td> */}
           <td>{data.Country} <ReactCountryFlag countryCode={data.CountryCode} svg /> </td>
           <td>{data.TotalConfirmed}</td>
           <td>{data.TotalDeaths}</td>
@@ -56,7 +51,6 @@ export default function CountryTable(props) {
             <thead>
               <tr>
                 <th>#</th>
-                {/* <th>Flag</th> */}
                 <th>Country</th>
                 <th>Total Cases</th>
                 <th>Total Deaths</th>
