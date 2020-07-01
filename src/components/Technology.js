@@ -13,7 +13,7 @@ class News extends React.Component {
     }
 
     componentDidMount() {
-        Axios.get('http://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05c0f32f4c0e416f87473d04dc80ed67').then((res) => {
+        Axios.get('https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=05c0f32f4c0e416f87473d04dc80ed67').then((res) => {
             this.setState({ articles: res.data.articles });
             this.setState({ loading: false })
         });
