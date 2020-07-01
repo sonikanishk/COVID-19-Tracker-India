@@ -65,7 +65,6 @@ handleCountryChange = async (pickedCountry) =>{
     
   };  
   this.setState({ status:curr_status });  
-  console.log(this.state.status);
 }}
   render() {
     return (

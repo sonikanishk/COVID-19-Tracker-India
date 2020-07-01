@@ -18,23 +18,11 @@ return (
     <div style={{textAlign: "center",paddingTop: "10rem",paddingBottom: "10rem" }}>
         <div>
         <Chart
-          // chartEvents={[
-          //   {
-          //     eventName: "select",
-          //     callback: ({ chartWrapper }) => {
-          //       const chart = chartWrapper.getChart();
-          //       const selection = chart.getSelection();
-          //       if (selection.length === 0) return;
-          //       // const region = data[selection[0].row + 1];
-          //       // console.log("Selected : " + region);
-          //     }
-          //   }
-          // ]}
+          
           chartType="GeoChart"
           width="100%"
           height="600px"
           options = {{
-            //region: 'IN',
             displayMode: 'auto',
             
             colorAxis: {colors: ['white','orange','orange','red']}
