@@ -12,7 +12,7 @@ import HashLoader from "react-spinners/HashLoader";
 import "react-toggle/style.css"
 
 class Home extends React.Component {
-  state = {  
+  state = {
     status: {},
     states: [],
     withtime: [],
@@ -20,79 +20,71 @@ class Home extends React.Component {
     loading: true,
     darkTheme: false,
   }
-  
+
   componentDidMount() {
 
-    Axios.get(`https://api.covid19india.org/data.json`).then(res => { 
+    Axios.get(`https://api.covid19india.org/data.json`).then(res => {
       let curr_status = {
         deaths: res.data.statewise[0].deaths,
         confirmed: res.data.statewise[0].confirmed,
         recovered: res.data.statewise[0].recovered,
         time: res.data.statewise[0].lastupdatedtime,
-        
-      };  
-      this.setState({ status:curr_status });
-      this.setState({states:res.data.statewise});
-      this.setState({tests:res.data.tested});
-      this.setState({withtime:res.data.cases_time_series});
-      this.setState({loading:false});
-      this.setState({darkTheme:false});
-      
+
+      };
+      this.setState({ status: curr_status });
+      this.setState({ states: res.data.statewise });
+      this.setState({ tests: res.data.tested });
+      this.setState({ withtime: res.data.cases_time_series });
+      this.setState({ loading: false });
+      this.setState({ darkTheme: false });
+
     }).catch(err => {
       console.log("error");
     })
   }
   handleDarkThemeChange = () => {
-    this.setState({darkTheme:!this.state.darkTheme})
+    this.setState({ darkTheme: !this.state.darkTheme })
   }
   render() {
     return (
-      
-      <div className = "page-element" >
-        <Navbar/>
+
+      <div className="page-element" >
+        <Navbar />
         <div className="wrap">
-        <hr/>
-          <div class="Loader" style={{display : "flex",justifyContent: "center",margin: "20px"}}>
-            <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
+          <hr />
+          <div class="Loader" style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
+            <HashLoader size={30} color={"#84EDB4"} loading={this.state.loading} />
           </div>
           <div class="Loader">
-            {this.state.loading ? <div style={{display: "flex", justifyContent: "center", margin: "20px",fontFamily: "'Cinzel', serif" }}><p> Loading... </p></div> : "" }
-        </div>
+            {this.state.loading ? <div style={{ display: "flex", justifyContent: "center", margin: "20px", fontFamily: "'Cinzel', serif" }}><p> Loading... </p></div> : ""}
+          </div>
           <div className="App">
-            <div id= "cards" className = "col-12">
-                <Overall status = {this.state.status}/>  
+            <div id="cards" className="col-12">
+              <Overall status={this.state.status} />
             </div>
             <div id="maps">
-                <Maps states = {this.state.states} />
+              <Maps states={this.state.states} />
             </div>
-            <div id = "about" className = "col-12">
-                <About/>
+            <div id="about" className="col-12">
+              <About />
             </div>
             <div className="col-12" id="charts">
               <div >
-                <Charts data = {this.state.withtime} data1 = {this.state.tests} />
+                <Charts data={this.state.withtime} data1={this.state.tests} />
               </div>
-            </div> 
+            </div>
             <div className="col-12" id="table">
-                <StateTable states={this.state.states}/>
-   
-            </div>                 
+              <StateTable states={this.state.states} />
+
+            </div>
           </div>
         </div>
-        
+
       </div>
-     
+
     );
   }
 }
 export default Home;
 
 
-/* 
-  
-  dark mode
-  cards
-  
-              
- */       
-         
