@@ -201,13 +201,13 @@ const dataSource = {
     const chartConfigs = {
         type: 'India',
         width : "100%",
-        height: "50%",
+        height: "60%",
         dataFormat: 'json',
         dataSource: dataSource ,
       };
     
 return (
-    <div style={{textAlign: "center",margin:"5rem"}}>
+    <div style={{textAlign: "center",marginLeft:"20vw",marginRight:"20vw"}}>
         <ReactFC {...chartConfigs} />
     </div>
   );

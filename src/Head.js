@@ -12,8 +12,9 @@ export default function Head() {
                 </div>
             
                 <div className="menu col-md-4">
-                    <Link to="/World"> World  |</Link>
-                    <Link to="/">India </Link>
+                    <Link to="/World"> World </Link>|
+                    <Link to="/"> India </Link>|
+                    <Link to="/News"> News </Link>
                 </div>
                 <div className="help-line col-md-4">
                     <p>

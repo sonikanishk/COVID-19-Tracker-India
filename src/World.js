@@ -4,7 +4,6 @@ import ChooseCountry from './components/ChooseCountry'
 import WorldMap from './components/WorldMap'
 import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Footer from './Footer';
 import CountryCards from './components/CountryCards'
 import About from './components/About';
 import Navbar from './components/Navbar';
@@ -73,9 +72,13 @@ handleCountryChange = async (pickedCountry) =>{
       <div id="home" className = "page-element" >
         <Navbar/>
         <div class="wrap">
-          <div style={{display : "flex",justifyContent: "center",margin: "20px"}}>
-          <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
-        </div>
+        <hr/>
+          <div class="Loader" style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
+            <HashLoader size={30} color={"#84EDB4"} loading={this.state.loading} />
+          </div>
+          <div class="Loader">
+            {this.state.loading ? <div style={{ display: "flex", justifyContent: "center", margin: "20px", fontFamily: "'Cinzel', serif" }}><p> Loading... </p></div> : ""}
+          </div>
           <div className="App">
             <div id= "cards" class = "col-12">
               <CountryCards status = {this.state.status}/>
@@ -102,7 +105,7 @@ handleCountryChange = async (pickedCountry) =>{
             </div>                 
           </div> 
         </div>
-        <Footer/>
+        
       </div>
      
     );

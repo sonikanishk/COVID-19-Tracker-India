@@ -7,7 +7,6 @@ import Axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Overall from './components/Overall'
 import About from './components/About'
-import Footer from './Footer';
 import Navbar from './components/Navbar'
 import HashLoader from "react-spinners/HashLoader";
 import "react-toggle/style.css"
@@ -50,11 +49,14 @@ class Home extends React.Component {
     return (
       
       <div className = "page-element" >
-
         <Navbar/>
         <div className="wrap">
-          <div style={{display : "flex",justifyContent: "center",margin: "20px"}}>
-          <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
+        <hr/>
+          <div class="Loader" style={{display : "flex",justifyContent: "center",margin: "20px"}}>
+            <HashLoader size={30} color={"#84EDB4" } loading={this.state.loading}/>
+          </div>
+          <div class="Loader">
+            {this.state.loading ? <div style={{display: "flex", justifyContent: "center", margin: "20px",fontFamily: "'Cinzel', serif" }}><p> Loading... </p></div> : "" }
         </div>
           <div className="App">
             <div id= "cards" className = "col-12">
@@ -77,7 +79,7 @@ class Home extends React.Component {
             </div>                 
           </div>
         </div>
-        <Footer/>
+        
       </div>
      
     );
