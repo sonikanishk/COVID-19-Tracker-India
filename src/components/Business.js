@@ -43,7 +43,7 @@ class News extends React.Component {
                     <Link to="/News/Technology" className=" content" >technology</Link>
                 </div>
 
-                <div className="Newa-data">
+                <div className="News-data">
                     <Newsdata data={this.state.articles}/>
                 </div>
                 
