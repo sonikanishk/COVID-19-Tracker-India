@@ -52,10 +52,10 @@ class Home extends React.Component {
         <Navbar />
         <div className="wrap">
           <hr />
-          <div class="Loader" style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
+          <div className="Loader" style={{ display: "flex", justifyContent: "center", margin: "20px" }}>
             <HashLoader size={30} color={"#84EDB4"} loading={this.state.loading} />
           </div>
-          <div class="Loader">
+          <div className="Loader">
             {this.state.loading ? <div style={{ display: "flex", justifyContent: "center", margin: "20px", fontFamily: "'Cinzel', serif" }}><p> Loading... </p></div> : ""}
           </div>
           <div className="App">

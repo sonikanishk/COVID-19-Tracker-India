@@ -6,17 +6,17 @@ class Footer extends React.Component {
     render(){
         return(
             <footer>
-                <div class="container-fluid">
-                    <div class="row footer-wrap">
+                <div className="container-fluid">
+                    <div className="row footer-wrap">
 
-                        <div class="col-12 copyright">
+                        <div className="col-12 copyright">
                             <div>
-                                <a href="https://www.linkedin.com/in/kanishk-soni-282342197/" class="fab fa-linkedin" >{}</a>
-                                <a href="https://github.com/sonikanishk" class="fa fa-github">{}</a>
-                                <a href="mailto:soni.kanishk710@gmail.com" class="fas fa-envelope">{}</a>
+                                <a href="https://www.linkedin.com/in/kanishk-soni-282342197/" className="fab fa-linkedin icon" >{}</a>
+                                <a href="https://github.com/sonikanishk" className="fa fa-github icon">{}</a>
+                                <a href="mailto:soni.kanishk710@gmail.com" className="fas fa-envelope icon">{}</a>
                             </div>
                         </div>
-                        <div class="col-12 copyright">
+                        <div className="col-12 copyright">
                             <span> Copyright © 2020 Kanishk Soni </span> 
                         </div>
 
